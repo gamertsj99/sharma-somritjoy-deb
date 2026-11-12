@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gamertsj99.github.io/sharma-somritjoy-deb/sitemap.xml
