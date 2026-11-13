@@ -230,7 +230,7 @@
   .contact-left h3{font-size:27px;font-weight:800;margin-bottom:16px}
   .contact-left>p{color:var(--muted);max-width:440px;margin:0 0 30px}
   .info-card{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin-bottom:14px;transition:border-color .25s}
-  a.info-card:hover{border-color:var(--accent)}
+  a.info-card:hover{border-color:var(--accent)}.info-grid{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(3,1fr);gap:14px}.info-grid .info-card{width:100%;height:100%;min-height:88px;margin-bottom:0}
   .info-card .ic{width:46px;height:46px;flex:none;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
   .info-card .ic svg{width:22px;height:22px;fill:var(--accent)}
   .info-card .lbl{font-family:"Outfit",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.22em;color:var(--muted-2);text-transform:uppercase}
@@ -1568,13 +1568,19 @@
         <div class="contact-left reveal">
           <h3>Let&rsquo;s start a conversation</h3>
           <p>I&rsquo;m currently open to freelance design projects — a banner, a logo, a poster, or a full website. Tell me what you need, and I&rsquo;ll make it for you.</p>
-          <a class="info-card" href="https://t.me/sjoy1234567" target="_blank" rel="noopener">
+<div class="info-grid">
+  <a class="info-card" href="https://t.me/sjoy1234567" target="_blank" rel="noopener">
             <span class="ic"><svg viewBox="0 0 24 24"><path d="M21.9 4.6c.2-1-.6-1.7-1.5-1.3L2.7 9.7c-1 .4-1 1.9.1 2.2l4.4 1.4 1.7 5.4c.3.9 1.4 1.1 2 .4l2.4-2.3 4.6 3.4c.8.6 2 .2 2.2-.8l1.8-14.8zM8.5 12.6l9.3-5.9c.2-.1.4.2.2.3l-7.8 7.1-.3 3-1.4-4.5z"/></svg></span>
             <span><span class="lbl">Message me — Telegram</span><br /><span class="val">@sjoy1234567</span></span>
           </a>
+    <a class="info-card" href="mailto:sharmasomritjoy@gmail.com">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99 .9-1.99 2L2 18c0 1.1 .9 2 2 2 h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+      <span><span class="lbl">Gmail</span><br /><span class="val">sharmasomritjoy@gmail.com</span></span>
+    </a>      
           <div class="info-card">
             <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
             <span><span class="lbl">Location</span><br /><span class="val">Bangladesh</span></span>
+          </div>
           </div>
           <div class="socials">
             <a href="https://t.me/sjoy1234567" target="_blank" rel="noopener" aria-label="Telegram">
@@ -2064,7 +2070,7 @@
     conPlain:'Get In ', conAccent:'Touch',
     conH:'Let’s start a conversation',
     conP:'I’m currently open to freelance design projects — a banner, a logo, a poster, or a full website. Tell me what you need, and I’ll make it for you.',
-    infoLbl:['Message me — Telegram','Location'], locVal:'Bangladesh',
+    infoLbl:['Message me — Telegram','Gmail','Location'], locVal:'Bangladesh',
     fNameLbl:'Your Name', fServiceLbl:'What do you need?', fMsgLbl:'Your Message',
     phName:'Your Name', phMsg:'Your Message — tell me about your project…',
     opts:['YouTube Banner','Logo Design','Facebook Post / Poster','Website Design','Something else'],
@@ -2136,7 +2142,7 @@
     conPlain:'যোগাযোগ ', conAccent:'করুন',
     conH:'আসুন কথা শুরু করি',
     conP:'আমি এখন ফ্রিল্যান্স ডিজাইন প্রজেক্টের জন্য উপলব্ধ — একটি ব্যানার, একটি লোগো, একটি পোস্টার কিংবা পুরো ওয়েবসাইট। আপনার কী দরকার বলুন, আমি বানিয়ে দেব।',
-    infoLbl:['মেসেজ করুন — Telegram','অবস্থান'], locVal:'বাংলাদেশ',
+    infoLbl:['মেসেজ করুন — Telegram','Gmail','অবস্থান'], locVal:'বাংলাদেশ',
     fNameLbl:'আপনার নাম', fServiceLbl:'আপনার কী দরকার?', fMsgLbl:'আপনার বার্তা',
     phName:'আপনার নাম', phMsg:'আপনার বার্তা — আপনার প্রজেক্ট সম্পর্কে বলুন…',
     opts:['YouTube ব্যানার','লোগো ডিজাইন','Facebook পোস্ট / পোস্টার','ওয়েবসাইট ডিজাইন','অন্য কিছু'],
@@ -2304,7 +2310,7 @@
     setT(qs('.contact-left > p'),t.conP);
     qsa('#contact .info-card .lbl').forEach(function(el,i){if(t.infoLbl[i])el.textContent=t.infoLbl[i];});
     var vals=qsa('#contact .info-card .val');
-    if(vals[1])vals[1].textContent=t.locVal;
+    if(vals[2])vals[2].textContent=t.locVal;
     setT(qs('label[for="fName"]'),t.fNameLbl);
     setT(qs('label[for="fService"]'),t.fServiceLbl);
     setT(qs('label[for="fMsg"]'),t.fMsgLbl);
